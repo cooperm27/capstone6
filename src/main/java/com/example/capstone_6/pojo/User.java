@@ -1,0 +1,71 @@
+package com.example.capstone_6.pojo;
+
+import javax.persistence.Entity;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="capstone6_user")
+public class User {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+	private String email;
+	private String password;
+	// Github has it's own ID for the user. It will be different than our own.
+	private Long githubId;
+
+	public User() {
+		
+	}
+
+	public User(String email, String password) {
+		this.email = email;
+		this.password = password;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Long getGithubId() {
+		return githubId;
+	}
+
+	public void setGithubId(Long githubId) {
+		this.githubId = githubId;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", email=" + email + ", password=" + password + ", githubId=" + githubId + "]";
+	}
+	
+	}
+
+	
